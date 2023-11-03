@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br><br>
+                <h3>Create a New Listing</h3>
+                <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                    <div class="mb-3 ">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" placeholder="enter title" class="form-control"
+                            required>
+                        <div class="invalid-feedback">
+                            Please choose a Title.
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" placeholder="enter description" class="form-control"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a short Description.
+                        </div>
+                    </div>
+
+    
+
+                    
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" name="listing[image]"
+                            class="form-control">
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input name="listing[price]" placeholder="enter price" class="form-control"
+                                required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Price.
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="country" name="listing[country]" placeholder="enter country"
+                                class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Country.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="location" name="listing[location]" placeholder="enter location"
+                            class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Location.
+                        </div>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" required>
+                        <label class="form-check-label" for="validationFormCheck1"> I Agree the terms and conditions</label>
+                        <div class="invalid-feedback">Check this checkbox</div>
+                    </div>
+
+                    <br>
+                    <button class="btn btn-outline-success">ADD</button>
+                    <br><br>
+            </div>
+        </div>
+        </form>
+    </body>

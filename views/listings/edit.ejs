@@ -1,0 +1,103 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br><br>
+                <h3>EDIT your Listing</h3>
+                <form method="post" action="/listings/<%= Details.id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" value="<%= Details.title %>" class="form-control"
+                            required>
+                            <div class="invalid-feedback">
+                                Please choose a Title.
+                            </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" class="form-control"
+                            required><%= Details.description %></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a short Description.
+                            </div>
+                    </div>
+
+                    <div class="mb-3 width-30">
+                       Original Listing Image <br>
+                       <img class="col-4" src="<%= originalImageUrl %>" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload New Image</label>
+                        <input type="file" name="listing[image]" value="<%= Details.image %>" class="form-control"/>
+                
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" name="listing[price]" value="<%= Details.price %>" class="form-control"
+                                required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Price.
+                                </div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="country" name="listing[country]" value="<%= Details.country %>"
+                                class="form-control" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Country.
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input required type="location" name="listing[location]" value="<%= Details.location %>"
+                            class="form-control">
+                            <div class="invalid-feedback">
+                                Please provide a valid Location.
+                            </div>
+                    </div>
+                    <br><br>
+                    <button class="btn btn-outline-success">EDIT</button>
+
+                    <br><br>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+    </body>
+
+
+    <!-- <h2>EDIT your Listing</h2>
+    <form method="post" action="/listings/<%= Details.id%>?_method=PUT">
+        <input type="text" name="listing[title]" value="<%= Details.title %>">
+        <br><br>
+        <textarea name="listing[description]" ><%= Details.description %></textarea>
+        <br><br>
+        <input type="text" name="listing[image]" value="<%= Details.image %>">
+        <br><br>
+        <input type="number" name="listing[price]" value="<%= Details.price %>">
+        <br><br>
+        <input type="country" name="listing[country]" value="<%= Details.country %>">
+        <br><br>
+        <input type="location" name="listing[location]" value="<%= Details.location %>">
+        <br><br>
+        <button>EDIT</button>
+    </form>
+</body> -->
